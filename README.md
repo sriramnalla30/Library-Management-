@@ -39,6 +39,7 @@ Alternatively, you can use Maven to build and run the application from the comma
 mvn clean install
 mvn spring-boot:run
 }
+
 4. Accessing the Application
 Once the application is running, you can access it in a web browser at http://localhost:8080.
 
@@ -74,6 +75,7 @@ show(HttpServletResponse response): Displays all books in the database, providin
 edit(HttpServletRequest request, HttpServletResponse response): Allows editing the number of copies for a specific book identified by its title.
 delete(HttpServletRequest request, HttpServletResponse response): Deletes a book record from the database by ID or title.
 getBooksByAuthor(@RequestParam("author_to_search") String author, HttpServletResponse response): Searches and displays books by a specific author.
+
 2. BookRepo.java
 Purpose: This interface extends JpaRepository and provides methods for interacting with the database. It simplifies CRUD operations and custom queries.
 
@@ -82,6 +84,7 @@ Key Methods and Functionalities:
 findByAuthor(String author): Finds a list of books by the specified author.
 findByTitle(String title): Finds a list of books by the specified title.
 findAll(): Retrieves all books in the database.
+
 3. Book.java
 Purpose: This class represents the Book entity in the application. It includes attributes that map to the columns in the database table and serves as a data model.
 
@@ -104,6 +107,7 @@ Purpose: This utility class provides helper methods, primarily for handling Exce
 Key Methods and Functionalities:
 
 checkExcelFormat(MultipartFile file): Checks if the uploaded file is in Excel format by verifying the file's content type and file extension.
+
 5. ReportsService.java
 Purpose: This service class handles business logic related to generating reports, such as exporting data to Excel files and saving data from Excel files to the database.
 
@@ -111,6 +115,7 @@ Key Methods and Functionalities:
 
 generateExcel(HttpServletResponse response): Generates an Excel file containing all books from the database and writes it to the HTTP response.
 save(MultipartFile file): Saves book data from an uploaded Excel file into the database.
+
 6. pom.xml
 Purpose: The Maven Project Object Model (POM) file manages the project's dependencies, build configuration, and project metadata.
 
