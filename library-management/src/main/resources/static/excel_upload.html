@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload Excel File</title>
+</head>
+<body>
+    <h2>Upload Excel File to Insert New Books</h2>
+    <form method="POST" action="/excelUpload" enctype="multipart/form-data">
+        <label for="file">Choose Excel File:</label>
+        <input type="file" id="file" name="file" accept=".xlsx">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
